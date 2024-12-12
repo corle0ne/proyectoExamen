@@ -1,0 +1,89 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+.delete-zone {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px dashed red;
+    color: red;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #fdd;
+}
+
+.parking-lots {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.parking-slot {
+    width: 150px;
+    height: 100px;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    line-height: 100px;
+    font-weight: bold;
+    color: #aaa;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .parking-slot[data-color="red"] {
+        border-color: #ff0000;
+    }
+
+    .parking-slot[data-color="blue"] {
+        border-color: #0000ff;
+    }
+
+    .parking-slot[data-color="yellow"] {
+        border-color: #ffff00;
+    }
+
+    .parking-slot.over {
+        background-color: rgba(0, 255, 0, 0.2);
+        color: #333;
+    }
+
+.cars {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.car {
+    width: 100px;
+    height: 50px;
+    cursor: grab;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+    .car:active {
+        cursor: grabbing;
+        transform: scale(1.1);
+    }

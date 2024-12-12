@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sitioWeb>
+	<!--ESTRUCTURA DEL NAV-->
+	<Nav>
+		<NavLink Url="/WebForm1.aspx" Texto="Home" Id="0"></NavLink>
+		<NavLink Url="/WebForm1.aspx?Id=1" Texto="About" Id="1"></NavLink>
+		<NavLink Url="/WebForm1.aspx?Id=2" Texto="Services" Id="2"></NavLink>
+		<NavLink Url="/WebForm1.aspx?Id=3" Texto="Booking" Id="3"></NavLink>
+		<NavLink Url="/WebForm1.aspx?Id=4" Texto="Technicians" Id="4"></NavLink>
+		<NavLink Url="/WebForm1.aspx?Id=5" Texto="Testimonial" Id="5"></NavLink>
+		<NavLink Url="/WebForm1.aspx?Id=6" Texto="Contact" Id="6"></NavLink>
+		<NavLink Url="/WebForm1.aspx?Id=7" Texto="Game" Id="7"></NavLink>
+	</Nav>
+	<!--FIN NAV-->
+	<!--DATOS TEMPLATE GENERAL-->
+
+	<AboutUs>
+		<CompanyName>CarServ</CompanyName>
+		<Description>
+			We’re dedicated to keeping your vehicle running smoothly and safely. With years of experience, state-of-the-art equipment, and a team of skilled technicians, we provide a full range of auto repair and maintenance services tailored to your needs.
+		</Description>
+		<Imagen>img/about.jpg</Imagen>
+
+	</AboutUs>
+	
+	<Values>
+		<Value Nombre="Honesty and Transparency">
+			<Description>
+				We believe in building trust with our customers by providing honest advice, clear communication, and transparent pricing. You’ll always know what services your vehicle needs and why.
+			</Description>
+
+		</Value>
+
+		<Value Nombre="Customer Satisfaction">
+			<Description>
+				Your satisfaction is our priority. We strive to exceed your expectations with friendly service, timely repairs, and personalized attention to your automotive needs.
+			</Description>
+		</Value>
+
+		<Value Nombre="Quality Workmanship">
+			<Description>
+				Our team is dedicated to delivering top-notch service using the latest tools and techniques. We treat every vehicle as if it were our own, ensuring safety and reliability on the road.
+			</Description>
+		</Value>
+	</Values>
+
+	<Facts>
+		<NYears>20</NYears>
+		<NExperts>7</NExperts>
+		<NClients>1000</NClients>
+		<NProjects>40</NProjects>
+	</Facts>
+
+	<Servicios Nombre="Mecanica">
+		<Servicio Nombre="Diagnostic Test" Orden="1">
+			<Descripcion>Our technicians start by visually inspecting the vehicle to identify any obvious signs of damage, wear, or leaks. We use advanced diagnostic tools to connect to your vehicle's onboard computer systems, scanning for error codes or performance irregularities.</Descripcion>
+			<Costo>$80</Costo>
+			<Imagen>img/service-1.jpg</Imagen>
+		</Servicio>
+		<Servicio Nombre="Engine Servicing" Orden="2">
+			<Descripcion>We provide thorough engine servicing to keep your vehicle running at peak performance. Our engine service includes inspecting and replacing essential components like spark plugs, air filters, and fuel filters, as well as checking and topping off fluids such as engine oil and coolant. </Descripcion>
+			<Costo>$200-$2000</Costo>
+			<Imagen>img/service-2.jpg</Imagen>
+		</Servicio>
+		<Servicio Nombre="Tires Replacement" Orden="3">
+			<Descripcion>Our tire replacement process ensures your vehicle is safe and road-ready. First, we carefully remove the old tires and inspect the wheel rims for any damage. Then, we install the new tires with precision, ensuring a secure fit. Next, we balance the wheels to eliminate vibrations and promote even tire wear. </Descripcion>
+			<Costo>$100</Costo>
+			<Imagen>img/service-3.jpg</Imagen>
+		</Servicio>
+		<Servicio Nombre="Oil Changing" Orden="4">
+			<Descripcion>We use high-quality motor oil and filters to ensure optimal engine performance and longevity. Our process includes draining the old oil, replacing the oil filter, and refilling your engine with the right type and grade of oil for your vehicle</Descripcion>
+			<Costo>$150</Costo>
+			<Imagen>img/service-4.jpg</Imagen>
+		</Servicio>
+	</Servicios>
+
+	<Mecanicos>
+		<Nombre Nombre="Carlos García">
+			<Cargo>Técnico en Diagnóstico Automotriz</Cargo>
+			<Imagen>img/team-1.jpg</Imagen>
+		</Nombre>
+		<Nombre Nombre="Luis Ramírez">
+			<Cargo>Especialista en Sistemas de Frenos y Suspensión</Cargo>
+			<Imagen>img/team-2.jpg</Imagen>
+		</Nombre>
+		<Nombre Nombre="Mario Torres">
+			<Cargo>Jefe de Mantenimiento y Reparación General</Cargo>
+			<Imagen>img/team-3.jpg</Imagen>
+		</Nombre>
+		<Nombre Nombre="Pedro Sánchez ">
+			<Cargo>Técnico en Electricidad y Electrónica Automotriz</Cargo>
+			<Imagen>img/team-4.jpg</Imagen>
+		</Nombre>
+	</Mecanicos>
+
+	<Clientes>
+		<Nombre Nombre="Carlos Martínez">
+			<Profesion>Abogado</Profesion>
+			<Opinion>El servicio fue excelente. El personal fue muy profesional y me explicó detalladamente lo que le sucedió a mi vehículo. El trabajo fue rápido y mi coche quedó como nuevo. Definitivamente volveré si tengo algún otro problema.</Opinion>
+			<Imagen>img/testimonial-1.jpg</Imagen>
+		</Nombre>
+		<Nombre Nombre="Ana Gómez">
+			<Profesion>Diseñadora gráfica</Profesion>
+			<Opinion>Me sorprendió la atención al cliente, muy amables y atentos. El tiempo de espera fue razonable y el precio fue justo. Estoy contenta con el resultado y sin duda recomendaría este taller a mis amigos.</Opinion>
+			<Imagen>img/testimonial-2.jpg</Imagen>
+		</Nombre>
+		<Nombre Nombre="Javier Rodríguez">
+			<Profesion>Ingeniero civil</Profesion>
+			<Opinion>La calidad del trabajo es innegable. Me arreglaron el motor de mi coche en tiempo récord y el rendimiento mejoró mucho. El personal tiene bastante conocimiento y me dieron buenas recomendaciones para el mantenimiento de mi vehículo.</Opinion>
+			<Imagen>img/testimonial-3.jpg</Imagen>
+		</Nombre>
+		<Nombre Nombre="María Fernández">
+			<Profesion>Psicóloga</Profesion>
+			<Opinion>Aunque el servicio fue bueno, me pareció que los costos eran un poco altos en comparación con otros talleres. Sin embargo, el trato fue excelente y la calidad del trabajo me dio confianza para volver en el futuro.</Opinion>
+			<Imagen>img/testimonial-4.jpg</Imagen>
+		</Nombre>
+	</Clientes>
+	
+	<!--FIN DATOS TEMPLATE-->
+	<!--DATOS PARA EL HEADER Y FOOTER (NUM, DIRECCION, TELEFONO, ETC)-->
+	<InfGeneral>
+		<NameE>CarService</NameE>
+		<Address>M Flores 516, San Felipe Hueyotlipan, Pue</Address>
+		<Tel>+52 7491031325</Tel>
+		<Email>melladosolisd@gmail.com</Email>
+		<TimeTable>
+			<Time>Monday - Friday: 09.00 AM - 09.00 PM</Time>
+			<Time>Saturday - Sunday: 09.00 AM - 12.00 PM</Time>
+		</TimeTable>
+	</InfGeneral>
+
+</sitioWeb>
