@@ -79,6 +79,8 @@
     <Content Include="img\carousel-2.png" />
     <Content Include="img\carousel-bg-1.jpg" />
     <Content Include="img\carousel-bg-2.jpg" />
+    <Content Include="img\contact_us.png" />
+    <Content Include="img\ford.png" />
     <Content Include="img\gtr.png" />
     <Content Include="img\service-1.jpg" />
     <Content Include="img\service-2.jpg" />
@@ -93,7 +95,10 @@
     <Content Include="img\testimonial-2.jpg" />
     <Content Include="img\testimonial-3.jpg" />
     <Content Include="img\testimonial-4.jpg" />
+    <Content Include="img\toyo.png" />
+    <Content Include="img\vw.png" />
     <Content Include="js\dragandrop.js" />
+    <Content Include="js\googleMaps.js" />
     <Content Include="js\MiScript.js" />
     <Content Include="js\main.js" />
     <Content Include="lib\animate\animate.css" />

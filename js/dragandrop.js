@@ -1,81 +1,72 @@
-﻿const cars = document.querySelectorAll('.car');
-const parkingSlots = document.querySelectorAll('.parking-slot');
-const deleteZone = document.querySelector('.delete-zone');
+﻿$(document).ready(function () {
+    // Permitir que los elementos sean soltados en el área de los nombres
+    $(".name").on("dragover", function (event) {
+        event.preventDefault();
+    });
 
-cars.forEach(car => {
-    car.addEventListener('dragstart', dragStart);
-    car.addEventListener('dragend', dragEnd);
+    // Iniciar el arrastre de un logo
+    $(".logo").on("dragstart", function (event) {
+        event.originalEvent.dataTransfer.setData("text", event.target.id);
+    });
+
+    // Soltar el logo en el área correspondiente
+    $(".name").on("drop", function (event) {
+        event.preventDefault();
+        var data = event.originalEvent.dataTransfer.getData("text");
+        var draggedElement = $("#" + data);
+        var targetElement = $(this);
+
+        // Verificar si el logo coincide con el nombre (comparando el atributo 'alt' con el texto del contenedor)
+        if (targetElement.data("name").toLowerCase() === draggedElement.attr("alt").toLowerCase()) {
+            targetElement.append(draggedElement);
+            draggedElement.attr("draggable", "false");  // Deshabilitar el arrastre una vez que se coloca en su lugar
+            draggedElement.css({
+                "cursor": "default",
+                "margin": "auto"
+            });
+
+            // Hacer visible el nombre del auto al soltarlo
+            targetElement.find('span').css("visibility", "visible");
+        } else {
+            // Si el logo es incorrecto, muestra un mensaje de alerta usando SweetAlert
+            Swal.fire({
+                icon: 'error',
+                title: '¡Logo incorrecto!',
+                text: 'Intenta nuevamente.',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    });
+
+    // Permitir que los logos sean soltados en la papelera
+    $("#trash").on("dragover", function (event) {
+        event.preventDefault(); // Necesario para permitir que se suelte en esta área
+        $(this).css("background-color", "#E64545"); // Cambia el fondo cuando está encima de la papelera
+    });
+
+    // Restaurar el color del fondo de la papelera cuando el logo no esté sobre ella
+    $("#trash").on("dragleave", function () {
+        $(this).css("background-color", "#f1f1f1");
+    });
+
+    // Eliminar el logo cuando se suelta en la papelera
+    $("#trash").on("drop", function (event) {
+        event.preventDefault();
+        var data = event.originalEvent.dataTransfer.getData("text");
+        var draggedElement = $("#" + data);
+
+        // Eliminar el logo
+        draggedElement.remove();
+
+        // Mostrar mensaje de confirmación con SweetAlert
+        Swal.fire({
+            icon: 'success',
+            title: '¡Elemento eliminado!',
+            text: 'El logo se ha eliminado correctamente.',
+            confirmButtonText: 'Aceptar'
+        });
+
+        // Restaurar el color del fondo de la papelera
+        $(this).css("background-color", "#f1f1f1");
+    });
 });
-
-parkingSlots.forEach(slot => {
-    slot.addEventListener('dragover', dragOver);
-    slot.addEventListener('dragenter', dragEnter);
-    slot.addEventListener('dragleave', dragLeave);
-    slot.addEventListener('drop', drop);
-});
-
-deleteZone.addEventListener('dragover', dragOver);
-deleteZone.addEventListener('dragenter', dragEnterDelete);
-deleteZone.addEventListener('dragleave', dragLeaveDelete);
-deleteZone.addEventListener('drop', deleteItem);
-
-function dragStart(e) {
-    const car = e.target;
-    e.dataTransfer.setData('id', car.id || Math.random().toString(36).substr(2, 9));
-    car.classList.add('dragging');
-}
-
-function dragEnd(e) {
-    e.target.classList.remove('dragging');
-}
-
-function dragOver(e) {
-    e.preventDefault();
-}
-
-function dragEnter(e) {
-    if (e.target.classList.contains('parking-slot')) {
-        e.target.classList.add('over');
-    }
-}
-
-function dragLeave(e) {
-    if (e.target.classList.contains('parking-slot')) {
-        e.target.classList.remove('over');
-    }
-}
-
-function drop(e) {
-    e.preventDefault();
-    const carId = e.dataTransfer.getData('id');
-    const car = document.querySelector(`#${carId}`);
-
-    // Elimina el auto al soltarlo en cualquier zona
-    if (car) {
-        car.remove();
-    }
-
-    e.target.classList.remove('over');
-}
-
-function dragEnterDelete(e) {
-    if (e.target === deleteZone) {
-        e.target.classList.add('over');
-    }
-}
-
-function dragLeaveDelete(e) {
-    if (e.target === deleteZone) {
-        e.target.classList.remove('over');
-    }
-}
-
-function deleteItem(e) {
-    e.preventDefault();
-    const carId = e.dataTransfer.getData('id');
-    const car = document.querySelector(`#${carId}`);
-    if (car) {
-        car.remove();
-    }
-    deleteZone.classList.remove('over');
-}
